@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>transition</title>
+
+    <style>
+        .div {
+            transition: 1s all ease-in;
+            width: 100px;
+            height: 100px;
+            background: red;
+            border: 1px solid black;
+        }
+
+        /*  1  link控制未访问时的显示效果
+
+          2  hover 鼠标悬停和划过时的显示效果
+
+          3  visited 访问过后的显示效果
+
+          4  active 控制按钮被点击时的显示效果
+
+          5  focus 获得聚焦对象的元素，并设置聚焦时的显示效果*/
+        .div:active {
+
+            background: green;
+        }
+
+        .div:hover {
+            width: 200px;
+            height: 200px;
+            background: lavender;
+        }
+
+    </style>
+</head>
+<body>
+<div class="div"/>
+
+</body>
+</html>

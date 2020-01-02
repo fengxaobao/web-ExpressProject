@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BackGroup and Border</title>
+</head>
+<style>
+    @keyframes myfirst
+    {
+        0%   {background: red; left:0px; top:0px;}
+        25%  {background: yellow; left:200px; top:0px;}
+        50%  {background: blue; left:200px; top:200px;}
+        75%  {background: green; left:0px; top:200px;}
+        100% {background: red; left:0px; top:0px;}
+    }
+
+    @-moz-keyframes myfirst /* Firefox */
+    {
+        0%   {background: red; left:0px; top:0px;}
+        25%  {background: yellow; left:200px; top:0px;}
+        50%  {background: blue; left:200px; top:200px;}
+        75%  {background: green; left:0px; top:200px;}
+        100% {background: red; left:0px; top:0px;}
+    }
+
+    @-webkit-keyframes myfirst /* Safari 和 Chrome */
+    {
+        0%   {background: red; left:0px; top:0px;}
+        25%  {background: yellow; left:200px; top:0px;}
+        50%  {background: blue; left:200px; top:200px;}
+        75%  {background: green; left:0px; top:200px;}
+        100% {background: red; left:0px; top:0px;}
+    }
+
+    @-o-keyframes myfirst /* Opera */
+    {
+        0%   {background: red; left:0px; top:0px;}
+        25%  {background: yellow; left:200px; top:0px;}
+        50%  {background: blue; left:200px; top:200px;}
+        75%  {background: green; left:0px; top:200px;}
+        100% {background: red; left:0px; top:0px;}
+    }
+    div {
+    /*针对动画或者属性改变进行配置*/
+        /*transition: all 2s;*/
+        background: url(../res/image/qrcode8x8.jpg) no-repeat;
+        height: 300px;
+        width: 300px;
+        border: 30px;
+        transform: scale3d(0.3,0.5,1);
+    }
+
+    #div {
+        /*background: red;*/
+        -webkit-background-origin: content;
+        background-origin: content-box;
+    }
+
+    #div2 {
+        background-size: 50px 50px;
+        background-origin: border-box;
+        box-shadow: 10px 10px 15px red;
+    }
+    #div3 {
+
+        animation: myfirst 5s;
+    }
+
+    #div .text {
+        color: #000;
+        size: 15px;
+        text-shadow: 5px 5px 5px yellow;
+    }
+
+    #div2 .text {
+        border: 10px solid;
+        color: yellow;
+        size: 25px;
+        text-wrap: none;
+        word-break-wrap: true;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        text-justify: auto;
+    }
+    #div2 .text:hover{
+        transform: translate(30px 30px);
+        transform: rotate(30deg);
+        /*transform: scale(50,100);*/
+        -webkit-transform: skewY(10deg);
+        -moz-transform: skewY(10deg);
+        -ms-transform: skewY(10deg);
+        -o-transform: skewY(10deg);
+        transform: skewY(10deg);
+    }
+
+</style>
+<body>
+<div id="div">
+    <div class="text"> 用来测试text-shadow</div>
+</div>
+<div id="div2">
+    <div class="text"> 用来测试text-wrap</div>
+</div>
+<div id="div3">
+</div>
+</body>
+</html>

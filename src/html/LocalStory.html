@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LocalStory</title>
+    <script type="application/javascript">
+        window.onload = function () {
+            let context = document.getElementById("context");
+            let btn = document.getElementById("btn");
+            let read = document.getElementById("read");
+            btn.onclick = function () {
+                localStorage.setItem("context", context.value);
+            };
+            read.onclick = function () {
+                let readstr = localStorage.getItem("context");
+                if (readstr) {
+                    alert(readstr);
+                }else {
+                    alert("读取失败");
+                }
+            }
+
+            }
+    </script>
+</head>
+<body>
+<input type="text" id="context" placeholder="输入文字"/>
+<button id="btn">保存</button>
+<button id="read">读取</button>
+
+</body>
+</html>
